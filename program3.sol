@@ -11,8 +11,10 @@ contract myFavString {
     myNum  = _myNumber;
    }
    //so we used memory like adding temporoily so stored in heap 
-    function setMyString(string memory _myStr) public{
-    myString  = _myStr;
+    function setMyString(string calldata _myStr) public{
+    myString  = _myStr; //we can use call data as well but for read only
    }
+//Data location must be "memory" or "calldata" for parameter in function
+//memory usage ->  storage>memory>calldata
 
 }  
